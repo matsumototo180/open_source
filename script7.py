@@ -1,6 +1,5 @@
 import string
 import pathlib
-import os
 import datetime
 
 alphabet = string.ascii_uppercase
@@ -13,4 +12,4 @@ for filename in filenames:
 for path in pathlib.Path(".").glob("*.csv"):
     now = datetime.datetime.now()
     path_new = f'{path.stem}_test_{now:%Y%m%d_%H%M}.csv'
-    os.rename(path, path_new)
+    path.rename(path_new)
